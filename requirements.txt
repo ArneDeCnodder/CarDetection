@@ -3,5 +3,5 @@ numpy==1.22.1
 opencv-contrib-python==4.5.5.62
 opencv_python==4.5.5.62
 pafy==0.5.5
-git+https://github.com/Cupcakus/pafy
+#git+https://github.com/Cupcakus/pafy
 youtube-dl==2021.12.17
