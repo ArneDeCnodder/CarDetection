@@ -32,7 +32,7 @@ subtracao = cv2.bgsegm.createBackgroundSubtractorMOG()
 
 
 start_time = time()
-    
+print('de applicatie gaat van start!')
 
 while True:
     ret , frame1 = cap.read()
@@ -75,8 +75,8 @@ while True:
     # cv2.imshow("Video Original" , frame1)
     # cv2.imshow("Detectar",dilatada)
 
-    if cv2.waitKey(1) == 27:
-        break
+    # if cv2.waitKey(1) == 27:
+    #     break
 
-cv2.destroyAllWindows()
-cap.release()
+# cv2.destroyAllWindows()
+# cap.release()
