@@ -2,7 +2,7 @@ pip == 21.3.1
 numpy==1.22.1
 opencv-contrib-python==4.5.5.62
 opencv_python==4.5.5.62
-pafy==0.5.5
+# pafy==0.5.5
 
 
 -e git+https://github.com/mohamed-challal/pafy.git@develop#egg=pafy
