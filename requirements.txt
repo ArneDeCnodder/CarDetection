@@ -5,6 +5,6 @@ pafy==0.5.5
 youtube-dl==2021.12.17
 
 
--e git+https://github.com/mohamed-challal/pafy.git@develop#egg=pafy
+# -e git+https://github.com/mohamed-challal/pafy.git@develop#egg=pafy
 
 
