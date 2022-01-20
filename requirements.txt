@@ -1,4 +1,4 @@
-
+pip == 21.3.1
 numpy==1.22.1
 opencv_python==4.5.5.62
 pafy==0.5.5
