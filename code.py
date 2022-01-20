@@ -1,10 +1,9 @@
-
-
 import cv2
 import numpy as np
 from time import sleep
 from time import time
 import pafy
+
 
 
 largura_min=80 #Largura minima do retangulo
