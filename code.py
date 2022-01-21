@@ -3,6 +3,9 @@ import numpy as np
 from time import sleep
 from time import time
 import pafy
+from datetime import datetime
+import pywhatkit
+
 
 largura_min=80 #Largura minima do retangulo
 altura_min=80 #Altura minima do retangulo
@@ -62,7 +65,13 @@ while True:
         for (x,y) in detec:
             # do stuff
             if time() - start_time > 60: # 60 secs
+                # print("There have passed "+str(carros)+" cars in the past 60 seconds")
+                tijd = datetime.now()
+                # print(tijd.hour)
+                # print(tijd.minute+1)
                 print("There have passed "+str(carros)+" cars in the past 60 seconds")
+                pywhatkit.sendwhatmsg('+32471417080','Hey Lian, '+"there have passed "+str(carros)+" cars in the past 60 seconds",tijd.hour,tijd.minute+2)
+                
                 carros = 0
                 start_time = time()   
             if y<(pos_linha+offset) and y>(pos_linha-offset) and x>(25+offset) and x<(600-offset):
