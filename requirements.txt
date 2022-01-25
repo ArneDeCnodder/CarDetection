@@ -1,6 +1,4 @@
-pywhatkit
-flask
-numpy
+
 opencv-contrib-python-headless
 opencv-python-headless
 pafy==0.5.5

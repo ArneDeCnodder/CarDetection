@@ -1,10 +1,7 @@
 import cv2
-import numpy as np
 from time import sleep
 from time import time
 import pafy
-from datetime import datetime
-import pywhatkit
 
 
 largura_min=80 #Largura minima do retangulo
@@ -18,6 +15,22 @@ delay= 60 #FPS do vídeo
 
 detec = []
 carros= 0
+
+def createMatrix(rowCount, colCount, dataList):
+    mat = []
+    for i in range(rowCount):
+        rowList = []
+        for j in range(colCount):
+            # you need to increment through dataList here, like this:
+            rowList.append(dataList[rowCount * i + j])
+        mat.append(rowList)
+
+    return mat
+
+def main():
+    alpha = [1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.]
+    mat = createMatrix(5,5,alpha)
+
 	
 def pega_centro(x, y, w, h):
     x1 = int(w / 2)
@@ -34,8 +47,10 @@ cap = cv2.VideoCapture(play.url) #create a opencv video stream.
 subtracao = cv2.bgsegm.createBackgroundSubtractorMOG()
 
 
+
+
 start_time = time()
-print('de applicatie gaat van start!')
+print('application start')
 
 while True:
     ret , frame1 = cap.read()
@@ -44,7 +59,7 @@ while True:
     grey = cv2.cvtColor(frame1,cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(grey,(3,3),5)
     img_sub = subtracao.apply(blur)
-    dilat = cv2.dilate(img_sub,np.ones((5,5)))
+    dilat = cv2.dilate(img_sub,main())
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
     dilatada = cv2.morphologyEx (dilat, cv2. MORPH_CLOSE , kernel)
     dilatada = cv2.morphologyEx (dilatada, cv2. MORPH_CLOSE , kernel)
@@ -65,13 +80,10 @@ while True:
         for (x,y) in detec:
             # do stuff
             if time() - start_time > 60: # 60 secs
-                # print("There have passed "+str(carros)+" cars in the past 60 seconds")
-                tijd = datetime.now()
+                # tijd = datetime.now()
                 # print(tijd.hour)
                 # print(tijd.minute+1)
                 print("There have passed "+str(carros)+" cars in the past 60 seconds")
-                pywhatkit.sendwhatmsg('+32471417080','Hey Lian, '+"there have passed "+str(carros)+" cars in the past 60 seconds",tijd.hour,tijd.minute+2)
-                
                 carros = 0
                 start_time = time()   
             if y<(pos_linha+offset) and y>(pos_linha-offset) and x>(25+offset) and x<(600-offset):
@@ -81,11 +93,12 @@ while True:
                  
        
     cv2.putText(frame1, "VEHICLE COUNT : "+str(carros), (450, 70), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255),5)
-    # cv2.imshow("Video Original" , frame1)
-    # cv2.imshow("Detectar",dilatada)
+#     cv2.imshow("Video Original" , frame1)
+#     cv2.imshow("Detectar",dilatada)
 
-    # if cv2.waitKey(1) == 27:
-    #     break
+#     if cv2.waitKey(1) == 27:
+#         break
 
+    
 # cv2.destroyAllWindows()
 # cap.release()
