@@ -39,7 +39,7 @@ def pega_centro(x, y, w, h):
     cy = y + y1
     return cx,cy
 
-URL = "https://www.youtube.com/watch?v=spmC3OpP-JA" #URL to parse
+URL = "https://youtu.be/2rt_LmWAO-E" #URL to parse
 play = pafy.new(URL).streams[-1] #'-1' means read the lowest quality of video.
 assert play is not None # we want to make sure their is a input to read.
 cap = cv2.VideoCapture(play.url) #create a opencv video stream.
