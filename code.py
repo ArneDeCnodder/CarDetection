@@ -7,7 +7,7 @@ import requests
 
 min_contour_width=90  #40
 min_contour_height=90  #40
-offset=7       #10
+offset=6       #10
 line_height=550 #550
 matches =[]
 cars=0
@@ -76,7 +76,7 @@ while ret:
                 # tijd = datetime.now()
                 # print(tijd.hour)
                 # print(tijd.minute+1)
-                print("There have passed "+str(cars)+" cars in the past 60 seconds")
+                # print("There have passed "+str(cars)+" cars in the past 60 seconds")
                 post_url = "https://project40-tm.herokuapp.com/stats/car"
                 myobj = {'amount': cars}
 
@@ -95,15 +95,15 @@ while ret:
     
     
     
-    #cv2.drawContours(frame1,contours,-1,(0,0,255),2)
+    # cv2.drawContours(frame1,contours,-1,(0,0,255),2)
 
 
-#     cv2.imshow("Original" , frame1)
-#     cv2.imshow("Difference" , th)
-#     if cv2.waitKey(1) == 27:
-#         break
-#     frame1 = frame2
-#     ret , frame2 = cap.read()
-# #print(matches)    
+    # cv2.imshow("Original" , frame1)
+    # cv2.imshow("Difference" , th)
+    # if cv2.waitKey(1) == 27:
+    #     break
+    frame1 = frame2
+    ret , frame2 = cap.read()
+#print(matches)    
 # cv2.destroyAllWindows()
 # cap.release()
