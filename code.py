@@ -78,9 +78,9 @@ while ret:
                 # print(tijd.minute+1)
                 print("There have passed "+str(cars)+" cars in the past 60 seconds")
                 post_url = "https://project40-tm.herokuapp.com/stats/car"
-                # myobj = {'amount': cars}
+                myobj = {'amount': cars}
 
-                # requests.post(post_url, json = myobj)
+                requests.post(post_url, json = myobj)
                 cars = 0
                 start_time = time()  
             if y<(750+offset) and y>(300-offset) and x>(1100-offset) and x<(1100+offset):
