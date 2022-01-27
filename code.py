@@ -18,7 +18,7 @@ def get_centroid(x, y, w, h):
     cx = x + x1
     cy = y + y1
     return cx,cy
-    #return (cx, cy)
+    #return (cx, cy)c
 
 URL = "https://www.youtube.com/watch?v=y7QiNgui5Tg" #URL to parse
 play = pafy.new(URL).streams[-1] #'-1' means read the lowest quality of video.
@@ -28,9 +28,6 @@ cap = cv2.VideoCapture(play.url) #create a opencv video stream.
 #cap = cv2.VideoCapture(0)
 # cap = cv2.VideoCapture('video.mp4')
 #cap = cv2.VideoCapture('Relaxing highway traffic.mp4')
-
-
-
 
 
 if cap.isOpened():
