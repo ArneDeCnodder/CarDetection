@@ -94,7 +94,6 @@ while ret:
     #                 (255, 170, 0), 2)
     
     
-    
     # cv2.drawContours(frame1,contours,-1,(0,0,255),2)
 
     # cv2.imshow("Original" , frame1)
