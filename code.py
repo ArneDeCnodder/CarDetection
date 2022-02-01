@@ -72,7 +72,7 @@ while ret:
         cv2.circle(frame1,centroid, 5, (0,255,0), -1)
         cx,cy= get_centroid(x, y, w, h)
         for (x,y) in matches:
-            if time() - start_time > 60: # 60 secs
+            if time() - start_time > 600: # 60 secs
                 # tijd = datetime.now()
                 # print(tijd.hour)
                 # print(tijd.minute+1)
