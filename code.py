@@ -87,12 +87,14 @@ while ret:
 # uncomment the lines below to see what the code does if you run it locally
 
     # cv2.drawContours(frame1,contours,-1,(0,0,255),2)
+    # cv2.putText(frame1, "Total Cars Detected: " + str(cars), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 1,
+    #                 (0, 170, 0), 2)
     # cv2.imshow("Original" , frame1)
     # cv2.imshow("Difference" , th)
     # if cv2.waitKey(1) == 27:
     #     break
-    frame1 = frame2
+    # frame1 = frame2
     ret , frame2 = cap.read()
 # print(matches)    
-# cv2.destroyAllWindows()
-# cap.release()
+cv2.destroyAllWindows()
+cap.release()
