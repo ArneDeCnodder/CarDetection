@@ -13,7 +13,7 @@ offset=5       # original = 10
 # define variables and functions
 matches =[]
 start_time = time()
-seconds = 600
+seconds = 60
 cars=0
 def get_centroid(x, y, w, h):
     x1 = int(w / 2)
