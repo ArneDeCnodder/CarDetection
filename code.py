@@ -7,7 +7,7 @@ import requests
 #tweak these settings to get more accurate predictions
 min_contour_width=100  #original = 40 
 min_contour_height=100  # original = 40
-offset=5       # original = 10
+offset=6       # original = 10
 
 
 # define variables and functions
@@ -93,7 +93,7 @@ while ret:
     # cv2.imshow("Difference" , th)
     # if cv2.waitKey(1) == 27:
     #     break
-    # frame1 = frame2
+    frame1 = frame2
     ret , frame2 = cap.read()
 # print(matches)    
 cv2.destroyAllWindows()
